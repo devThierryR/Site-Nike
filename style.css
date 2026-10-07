@@ -1,0 +1,178 @@
+/* 1. SEUS ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: azure;
+}
+
+/* 2. ESTILOS DO CABEÇALHO (PC) */
+header {
+    margin-top: 10px;
+    position: absolute;
+    width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & img {
+        width: 10%;
+    }
+    
+    & nav {
+        & ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        & a {
+            color: black;
+            text-decoration: none;
+        }
+
+        & :hover {
+            color: rgba(0, 0, 0, 0.359);
+        }
+    }
+} /* <--- O HEADER DEVE FECHAR AQUI! */
+
+/* 3. ESTILOS DA SEÇÃO (PC) */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;          
+    gap: 50px;                 
+    padding-top: 60px;         
+
+    & .tenis {
+        display: flex;
+        align-items: center;
+    }
+
+    & #imagem-tenis {
+        max-width: 400px; 
+        width: 90%;      
+        height: auto;    
+        transform: rotate(50deg);
+        filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+    }
+
+    & .descricao {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 350px;
+        gap: 20px;
+    }
+
+    & button {
+        background-color: #000000; 
+        color: #ffffff;            
+        border: none;             
+        padding: 15px 40px;        
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;           
+        transition: all 0.3s ease; 
+        width: 100%;
+    }
+
+    & button:hover {
+        background-color: #333333; 
+        transform: scale(1.02);    
+    }
+
+    & a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+} /* <--- A SEÇÃO FECHA AQUI */
+
+/* 4. ESTILOS DO RODAPÉ / SETAS (PC e Geral) */
+footer {
+    position: fixed;   
+    bottom: 40px;      
+    right: 50px;       
+    display: flex;
+    gap: 15px;         
+
+    & button {
+        background-color: transparent;
+        border: 2px solid #000000;     
+        border-radius: 50%;           
+        width: 50px;                  
+        height: 50px;
+        cursor: pointer;             
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;    
+    }
+
+    & button img {
+        width: 20px;  
+        height: auto;
+    }
+
+    & button:hover {
+        background-color: #00000061;    
+        transform: scale(1.1);         
+    }
+
+    & .seta1 {
+        transform: rotate(180deg); 
+    }
+
+    & .seta1:hover {
+        transform: rotate(180deg) scale(1.1); 
+    }
+} /* <--- O FOOTER FECHA AQUI */
+
+
+/* ========================================= */
+/* 5. MEDIA QUERIES (REGRAS PARA O CELULAR)  */
+/* Deixe isso isolado no final do arquivo    */
+/* ========================================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px; 
+    }
+
+    header nav ul {
+        display: flex; /* Mudei para flex para ficar melhor no celular */
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 15px; /* Adicionado um gap no lugar do grid columns */
+    }    
+
+    section {
+        flex-direction: column;
+        height: auto;           
+        padding-top: 120px;     /* Espaço do topo (menu) */
+        padding-bottom: 100px;  /* Espaço do fundo */
+        gap: 0px;               /* ZERAMOS o gap para a rotação não bugar o espaço */
+    }
+
+    section .descricao {
+        align-items: center; /* Centraliza o título, o texto e o botão na tela do celular */
+        text-align: center;  /* Alinha as palavras no centro */
+    }
+
+   section #imagem-tenis {
+        max-width: 250px;          /* Tênis num tamanho ideal para o celular */
+        transform: rotate(15deg);  /* Deixamos ele menos inclinado no celular. Isso resolve o bug do espaço! */
+        margin-bottom: 30px;       /* Agora usamos a margem para afastar ele do texto com precisão */
+    }
+}
