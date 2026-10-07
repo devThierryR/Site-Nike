@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: azure;
+}
+
+header {
+    margin-top: 10px;
+    position: absolute;
+    width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & img {
+        width: 10%;
+    }
+    
+    & nav {
+        & ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        & a {
+            color: black;
+            text-decoration: none;
+        }
+
+        & :hover {
+            color: rgba(0, 0, 0, 0.359);
+        }
+    }
+} 
+
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;          
+    gap: 50px;                 
+    padding-top: 60px;         
+
+    & .tenis {
+        display: flex;
+        align-items: center;
+    }
+
+    & #imagem-tenis {
+        max-width: 400px; 
+        width: 90%;      
+        height: auto;    
+        transform: rotate(50deg);
+        filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+    }
+
+    & .descricao {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 350px;
+        gap: 20px;
+    }
+
+    & button {
+        background-color: #000000; 
+        color: #ffffff;            
+        border: none;             
+        padding: 15px 40px;        
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;           
+        transition: all 0.3s ease; 
+        width: 100%;
+    }
+
+    & button:hover {
+        background-color: #333333; 
+        transform: scale(1.02);    
+    }
+
+    & a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+} 
+
+footer {
+    position: absolute;   
+    bottom: 40px;      
+    right: 50px;       
+    display: flex;
+    gap: 15px;         
+
+    & button {
+        background-color: transparent;
+        border: 2px solid #000000;     
+        border-radius: 50%;           
+        width: 50px;                  
+        height: 50px;
+        cursor: pointer;             
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;    
+    }
+
+    & button img {
+        width: 20px;  
+        height: auto;
+    }
+
+    & button:hover {
+        background-color: #00000061;    
+        transform: scale(1.1);         
+    }
+
+    & .seta1 {
+        transform: rotate(180deg); 
+    }
+
+    & .seta1:hover {
+        transform: rotate(180deg) scale(1.1); 
+    }
+} 
+
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px; 
+    }
+
+    header nav ul {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 15px; 
+    }    
+
+    section {
+        flex-direction: column;
+        height: auto;           
+        padding-top: 120px;   
+        padding-bottom: 100px; 
+        gap: 0px;              
+    }
+
+    section .descricao {
+        align-items: center; 
+        text-align: center;  
+    }
+
+   section #imagem-tenis {
+        max-width: 250px;         
+        transform: rotate(15deg);  
+        margin-bottom: 30px;     
+    }
+
+    footer {
+        position: relative;      
+        bottom: auto;           
+        right: auto;            
+        justify-content: center; 
+        padding-bottom: 40px;    
+        margin-top: 10px;       
+    }
+}
