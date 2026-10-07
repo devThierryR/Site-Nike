@@ -25,7 +25,6 @@ const listaDeTenis = [
 
 let indiceAtual = 0;
 
-// Puxa os elementos do HTML para o JavaScript
 const imagemHtml = document.getElementById("imagem-tenis");
 const tituloHtml = document.getElementById("titulo-tenis");
 const textoHtml = document.getElementById("texto-tenis");
@@ -33,18 +32,15 @@ const textoHtml = document.getElementById("texto-tenis");
 const btnVoltar = document.querySelector(".seta1");
 const btnAvancar = document.querySelector(".seta2");
 
-// Função que atualiza a tela com base no índice atual
 function atualizarTela() {
     imagemHtml.src = listaDeTenis[indiceAtual].imagem;
     tituloHtml.textContent = listaDeTenis[indiceAtual].titulo;
     textoHtml.textContent = listaDeTenis[indiceAtual].texto;
 }
 
-// O que acontece ao clicar na seta da direita (Avançar)
 btnAvancar.addEventListener("click", () => {
     indiceAtual++; // Soma 1 no índice
     
-    // Se passar do último tênis da lista, volta pro primeiro (índice 0)
     if (indiceAtual >= listaDeTenis.length) {
         indiceAtual = 0;
     }
@@ -52,11 +48,9 @@ btnAvancar.addEventListener("click", () => {
     atualizarTela();
 });
 
-// O que acontece ao clicar na seta da esquerda (Voltar)
 btnVoltar.addEventListener("click", () => {
     indiceAtual--; // Subtrai 1 do índice
     
-    // Se tentar voltar antes do primeiro, vai pro último da lista
     if (indiceAtual < 0) {
         indiceAtual = listaDeTenis.length - 1;
     }
