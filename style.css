@@ -9,7 +9,6 @@ body {
     background-color: azure;
 }
 
-/* 2. ESTILOS DO CABEÇALHO (PC) */
 header {
     margin-top: 10px;
     position: absolute;
@@ -99,7 +98,7 @@ section {
 } 
 
 footer {
-    position: fixed;   
+    position: absolute;   
     bottom: 40px;      
     right: 50px;       
     display: flex;
@@ -169,5 +168,14 @@ footer {
         max-width: 250px;         
         transform: rotate(15deg);  
         margin-bottom: 30px;     
+    }
+
+    footer {
+        position: relative;      
+        bottom: auto;           
+        right: auto;            
+        justify-content: center; 
+        padding-bottom: 40px;    
+        margin-top: 10px;       
     }
 }
